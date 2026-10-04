@@ -15,6 +15,7 @@ export function Navbar() {
               key={`subpage-${pageIndex}-${subpageIndex}`}
               as={Link}
               to={subpage.path}
+              
             >
               {subpage.name}
             </NavDropdown.Item>
@@ -32,7 +33,7 @@ export function Navbar() {
       );
     } else if ("path" in item && item.path) {
       return (
-        <Nav.Link key={`page-${pageIndex}`} as={Link} to={item.path}>
+        <Nav.Link className="text-white" key={`page-${pageIndex}`} as={Link} to={item.path}>
           {item.name}
         </Nav.Link>
       );
@@ -40,7 +41,7 @@ export function Navbar() {
   });
 
   return (
-    <BootstrapNavbar expand="lg" className="bg-body-tertiary" fixed="top">
+    <BootstrapNavbar expand="lg" className="bg-white text-white!" fixed="top">
       <Container>
         <BootstrapNavbar.Brand>
           {import.meta.env.VITE_TEAM_NAME}

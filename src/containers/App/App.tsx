@@ -7,7 +7,7 @@ import { Navbar } from "../../components/Navbar";
 import { Header } from "../../components/Header";
 import { NotFound } from "../../components/NotFound";
 import { Footer } from "../../components/Footer";
-
+import MainHeader from "../../components/MainHeader";
 const App = () => {
   const pathMapping = getPathMapping();
   const currentPath =
@@ -31,20 +31,26 @@ const App = () => {
       {/* Header and PageContent */}
       <Routes>
         {Object.entries(pathMapping).map(
-          ([path, { title, lead, component: Component }]) => (
-            <Route
-              key={path}
-              path={path}
-              element={
-                <>
-                  <Header title={title || ""} lead={lead || ""} />
-                  <div className="container">
-                    <Component />
-                  </div>
-                </>
-              }
-            />
-          ),
+          ([path, { title, lead, component: Component }]) => {
+            return (
+              <Route
+                key={path}
+                path={path}
+                element={
+                  <>
+                    {title == "Home" ? (
+                      <MainHeader />
+                    ) : (
+                      <Header title={"Moskateer"} lead={"basic intro k"} />
+                    )}
+                    <div className="container">
+                      <Component />
+                    </div>
+                  </>
+                }
+              />
+            );
+          },
         )}
         <Route
           path="*"

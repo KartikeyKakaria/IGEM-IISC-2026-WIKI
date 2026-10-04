@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+:root{
+    --color-black: #000000;
+    --color-gray: #233D4D;
+    --color-orange: #FE7F2D;
+    --color-white: #EAECF0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    background-color: var(--color-white) !important;
+}
