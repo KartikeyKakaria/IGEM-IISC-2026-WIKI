@@ -1,0 +1,159 @@
+.world-malaria-map {
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+.world-malaria-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  overflow: visible;
+}
+
+/* Don't let a generic SVG/map rule override our fills */
+
+.world-malaria-map .rsm-geography {
+  outline: none;
+  cursor: default;
+}
+
+.world-malaria-map .rsm-geography:hover {
+  filter: brightness(1.08);
+}
+
+
+/* =========================
+   LEGEND
+========================= */
+
+.malaria-map-legend {
+  position: absolute;
+
+  right: 5%;
+  bottom: 3%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.65rem;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+
+  color: #233d4d;
+}
+
+.malaria-gradient {
+  width: 120px;
+  height: 6px;
+
+  background: linear-gradient(
+    90deg,
+    #b8dce8 0%,
+    #67afc9 25%,
+    #f0c0b7 50%,
+    #d84f43 75%,
+    #830000 100%
+  );
+}
+
+
+/* =========================
+   PANEL
+========================= */
+
+.malaria-panel {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+
+  overflow: hidden;
+
+  margin: 0;
+  padding: 0;
+
+  background: #ffffff;
+
+  color: #233d4d;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.malaria-content {
+  position: absolute;
+
+  left: clamp(3rem, 7vw, 8rem);
+  top: 8vh;
+
+  width: min(43vw, 650px);
+
+  z-index: 5;
+}
+
+
+/* =========================
+   MAP
+========================= */
+
+.malaria-map-wrapper {
+  position: absolute;
+
+  right: -6vw;
+  top: 50%;
+
+  width: min(61vw, 950px);
+
+  transform: translateY(-50%);
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .malaria-panel {
+    height: auto;
+    min-height: 100vh;
+
+    padding: 5rem 1.5rem 3rem;
+  }
+
+  .malaria-content {
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    width: 100%;
+  }
+
+  .malaria-map-wrapper {
+    position: relative;
+
+    right: auto;
+    top: auto;
+
+    width: 125%;
+
+    margin-top: 2rem;
+
+    transform: none;
+  }
+}

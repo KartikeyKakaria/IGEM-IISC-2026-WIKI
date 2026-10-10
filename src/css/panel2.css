@@ -1,0 +1,217 @@
+.disaster-panel {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 8vh 7vw;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: #233d4d;
+  color: #eaecf0;
+
+  overflow: hidden;
+}
+
+/* --------------------------------
+   MAIN TEXT
+-------------------------------- */
+
+.disaster-content {
+  width: min(900px, 90vw);
+
+  text-align: center;
+
+  z-index: 2;
+}
+
+.disaster-content h2 {
+  margin: 0 0 4vh;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: clamp(2.2rem, 5vw, 4.8rem);
+  font-weight: 600;
+
+  line-height: 0.95;
+  letter-spacing: 0.08em;
+
+  color: #fe7f2d;
+}
+
+.disaster-content h2 span {
+  color: #eaecf0;
+}
+
+.disaster-intro {
+  margin: 0 0 1.5rem;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: clamp(1rem, 1.5vw, 1.35rem);
+  font-weight: 500;
+
+  letter-spacing: 0.03em;
+
+  color: #eaecf0;
+}
+
+.disaster-statement {
+  margin: 0 auto;
+
+  max-width: 850px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: clamp(1rem, 1.35vw, 1.25rem);
+  line-height: 1.75;
+
+  color: rgba(234, 236, 240, 0.8);
+}
+
+.disaster-statement strong {
+  color: #ffffff;
+  font-weight: 650;
+}
+
+/* --------------------------------
+   STAT CARDS
+-------------------------------- */
+
+.stat-grid {
+  width: min(1000px, 90vw);
+
+  margin-top: 8vh;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: clamp(1.5rem, 4vw, 4rem);
+
+  z-index: 2;
+}
+
+.stat-card {
+  min-height: 270px;
+
+  padding: 3rem 2rem;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border: 1px solid rgba(234, 236, 240, 0.2);
+
+  background: rgba(0, 0, 0, 0.16);
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: #fe7f2d;
+  transform: translateY(-6px);
+}
+
+/* --------------------------------
+   NUMBERS
+-------------------------------- */
+
+.stat-number {
+  font-family: "Montserrat", sans-serif;
+
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: 650;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.04em;
+
+  color: #fe7f2d;
+
+  white-space: nowrap;
+}
+
+.stat-number span {
+  font-size: 0.45em;
+  letter-spacing: 0;
+}
+
+/* --------------------------------
+   LABEL
+-------------------------------- */
+
+.stat-label {
+  margin-top: 1.8rem;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+
+  color: #eaecf0;
+}
+
+.stat-description {
+  margin-top: 0.7rem;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 0.8rem;
+
+  letter-spacing: 0.05em;
+
+  color: rgba(234, 236, 240, 0.5);
+}
+
+/* --------------------------------
+   MOBILE
+-------------------------------- */
+
+@media (max-width: 768px) {
+  .disaster-panel {
+    padding: 8vh 6vw;
+  }
+
+  .disaster-content h2 {
+    margin-bottom: 3vh;
+  }
+
+  .disaster-statement {
+    line-height: 1.6;
+  }
+
+  .stat-grid {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 1.5rem;
+
+    margin-top: 6vh;
+  }
+
+  .stat-card {
+    min-height: 220px;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .stat-number {
+    font-size: clamp(3.5rem, 17vw, 5rem);
+  }
+}

@@ -1,5 +1,8 @@
 import { Inspirations, InspirationLink } from "../components/Inspirations";
-
+import { motion } from "framer-motion";
+import "../css/home.css";
+import WorldMalariaMap from "../components/WorldMap";
+import Panel2 from "../components/PanelTwo";
 export function Home() {
   const links: InspirationLink[] = [
     { year: 2025, teamName: "Brno Czech Republic", pageName: "" },
@@ -15,103 +18,76 @@ export function Home() {
   ];
 
   return (
-    <>
-      <div className="row">
-        <div className="col">
-          <h2>Essential First Steps</h2>
-          <hr />
-          <p>
-            Familiarize yourself with the official iGEM competition rules,
-            policies, and judging criteria:
-          </p>
-          <ul>
-            <li>
-              Carefully review the{" "}
-              <a
-                href="https://teams.igem.org/go/deliverables/wiki"
-                target="_blank"
-              >
-                Wiki Requirements page
-              </a>{" "}
-              to ensure your wiki meets all necessary standards for judging and
-              awards.
-            </li>
-            <li>
-              Understand the criteria and required wiki pages for Gold, Silver,
-              and Bronze Medals on the{" "}
-              <a
-                href="https://competition.igem.org/judging/awards/medals"
-                target="_blank"
-              >
-                Medals page
-              </a>
-              .
-            </li>
-            <li>
-              Explore the various Project Awards and their corresponding wiki
-              requirements on the{" "}
-              <a
-                href="https://competition.igem.org/judging/awards/project"
-                target="_blank"
-              >
-                Project Awards Page
-              </a>
-              .
-            </li>
-            <li>
-              Discover the eligibility criteria and wiki requirements for
-              Special Awards on the{" "}
-              <a
-                href="https://competition.igem.org/judging/awards/special"
-                target="_blank"
-              >
-                Special Awards Page
-              </a>
-              .
-            </li>
-          </ul>
+    <div className="home-container max-w-[4320px]!">
+      <section className="malaria-panel max-w-[4320px]!">
+        <div className="malaria-content">
+
+          <motion.h2
+          className="font-bold! text-6xl!"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.8,
+              delay:0.8,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            THE GLOBAL
+            <br />
+            MALARIA CHALLENGE
+          </motion.h2>
+
+          <div className="malaria-copy text-3xl mt-8">
+            <motion.p
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 1,
+                delay: 1.15,
+              }}
+            >
+              Malaria is one of the world's oldest and most persistent public
+              health crises.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.7,
+                delay: 1.45,
+              }}
+            >
+              Malaria remains endemic across large parts of{" "}
+              <strong>Sub-Saharan Africa and South Asia</strong>, including
+              India, placing hundreds of millions of people, especially{" "}
+              <strong>infants, young children, and pregnant women</strong> at
+              risk every year.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.7,
+                delay: 1.65,
+              }}
+            >
+              Despite decades of intervention, the disease has never been
+              eliminated, only pushed back and forth.
+            </motion.p>
+          </div>
         </div>
-      </div>
-      <div className="row mt-4">
-        <div className="col">
-          <h2>Building Your Wiki</h2>
-          <hr />
-          <ul>
-            <li>
-              <b>Content First, Design Second</b>: Focus on clearly documenting
-              your project, research, and activities. Design can be refined
-              later.
-            </li>
-            <li>
-              <b>Navigation is Key</b>: Structure your wiki with clear and
-              intuitive navigation. Visitors should easily find information.
-            </li>
-            <li>
-              <b>Accessibility Matters</b>: Use readable fonts, appropriate
-              color contrast, and ensure your wiki is mobile-friendly.
-            </li>
-            <li>
-              <b>Media Optimization</b>: Compress images and videos to reduce
-              file sizes and improve loading times.
-            </li>
-            <li>
-              <b>Document Early & Often</b>: Start documenting your project from
-              day one. Don't wait until the Wiki Freeze.
-            </li>
-            <li>
-              <b>Prepare for Deadlines</b>: Stay up-to-date with important
-              deadlines and events by checking the{" "}
-              <a
-                href="https://competition.igem.org/about/calendar"
-                target="_blank"
-              >
-                iGEM Competition Calendar
-              </a>
-              .
-            </li>
-          </ul>
-        </div>
-      </div>
+
+        <div className="ml-10! malaria-map-wrapper">
+              <WorldMalariaMap />
+        </div>  
+      </section>
+      <Panel2 />
       <div className="row mt-4">
         <div className="col-lg-8">
           <h2>Tips for Success</h2>
@@ -145,6 +121,6 @@ export function Home() {
         </div>
         <Inspirations inspirationLinkList={links} />
       </div>
-    </>
+    </div>
   );
 }

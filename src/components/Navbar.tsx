@@ -41,7 +41,7 @@ export function Navbar() {
   });
 
   return (
-    <BootstrapNavbar expand="lg" className="bg-white text-white!" fixed="top">
+    <BootstrapNavbar expand="lg" className="bg-white text-white!">
       <Container>
         <BootstrapNavbar.Brand>
           {import.meta.env.VITE_TEAM_NAME}

@@ -1,0 +1,186 @@
+.malaria-panel {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+
+  background: #ffffff;
+
+  color: #233d4d;
+}
+
+.home-container {
+  max-width:4320px;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.malaria-content {
+  position: absolute;
+
+  left: clamp(3rem, 7vw, 8rem);
+  top: 8vh;
+
+  width: min(43vw, 650px);
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   PANEL NUMBER
+========================================================= */
+
+.panel-index {
+  display: block;
+
+  margin-bottom: 1.5rem;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+
+  color: #fe7f2d;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.malaria-content h2 {
+  margin: 0;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: clamp(3rem, 5vw, 5.8rem);
+
+  line-height: 0.94;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 600;
+
+  color: #233d4d;
+}
+
+
+/* =========================================================
+   BODY COPY
+========================================================= */
+
+.malaria-copy {
+  max-width: 610px;
+
+  margin-top: 3rem;
+}
+
+.malaria-copy p {
+  margin: 0 0 1.4rem;
+
+  font-family: inherit;
+
+  font-size: clamp(0.95rem, 1.15vw, 1.15rem);
+
+  line-height: 1.65;
+
+  color: #52636e;
+}
+
+.malaria-copy strong {
+  color: #233d4d;
+
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   MAP POSITION
+========================================================= */
+
+.malaria-map-wrapper {
+  position: absolute;
+
+  right: -6vw;
+
+  top: 50%;
+
+  width: min(61vw, 950px);
+
+  transform: translateY(-50%);
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .malaria-content {
+    left: 5vw;
+
+    width: 48vw;
+  }
+
+  .malaria-map-wrapper {
+    right: -15vw;
+
+    width: 65vw;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .malaria-panel {
+    height: auto;
+    min-height: 100vh;
+
+    padding: 5rem 1.5rem 3rem;
+  }
+
+  .malaria-content {
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    width: 100%;
+  }
+
+  .malaria-content h2 {
+    font-size: clamp(2.8rem, 12vw, 4.5rem);
+  }
+
+  .malaria-copy {
+    margin-top: 2rem;
+  }
+
+  .malaria-map-wrapper {
+    position: relative;
+
+    right: auto;
+    top: auto;
+
+    width: 125%;
+
+    margin-top: 2rem;
+
+    transform: none;
+  }
+}
