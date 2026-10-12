@@ -19,7 +19,7 @@ export function Home() {
 
   return (
     <div className="home-container max-w-[4320px]!">
-      <section className="malaria-panel max-w-[4320px]!">
+      <section  id="malaria" className="malaria-panel max-w-[4320px]!">
         <div className="malaria-content">
 
           <motion.h2

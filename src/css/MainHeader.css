@@ -1,6 +1,7 @@
 /* ================================================= */
 /* HERO                                              */
 /* ================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
 
 .hero {
   position: relative;
@@ -22,7 +23,6 @@
   position: absolute;
 
   inset: 0;
-
   width: 100%;
   height: 100%;
 
@@ -39,8 +39,8 @@
 .hero-content {
   position: absolute;
 
-  left: clamp(3rem, 7vw, 8rem);
-  top: 31%;
+  right: clamp(3rem, 7vw, 8rem);
+  top: 11%;
 
   z-index: 10;
 
@@ -94,13 +94,10 @@
 .hero-title {
   margin: 0;
 
-  color: #fe7f2d;
-
-  font-family: "Montserrat", sans-serif;
-  font-size: clamp(3.2rem, 6vw, 6.3rem);
-  font-weight: 600;
-
-  line-height: 0.95;
+  color:white;
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 
   letter-spacing: 0.12em;
 
@@ -156,12 +153,16 @@
 /* ================================================= */
 
 .hero-actions {
+  position: absolute;
+  left: clamp(3rem, 7vw, 8rem);
+  bottom: 14%;
+  z-index: 10;
+
   display: flex;
   align-items: center;
-
-  margin-top: 2rem;
-
   gap: 2rem;
+
+  margin: 0;
 }
 
 
@@ -228,7 +229,7 @@
 
   gap: 0.35rem;
 
-  color: rgba(234, 236, 240, 0.55);
+  color: rgba(0, 0, 0, 0.55);
 
   font-family: "Montserrat", sans-serif;
   font-size: 0.62rem;
@@ -242,7 +243,7 @@
 .scroll-arrow {
   font-size: 1rem;
 
-  color: #eaecf0;
+  color: #060606;
 
   animation: scrollBounce 1.8s ease-in-out infinite;
 }
@@ -380,7 +381,7 @@
   }
 
   .hero-content {
-    left: 7vw;
+    right: 7vw;
     top: 25%;
 
     max-width: 86vw;

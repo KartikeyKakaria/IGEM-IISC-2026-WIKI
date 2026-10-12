@@ -8,6 +8,7 @@
   background: #ffffff;
 
   color: #233d4d;
+  scroll-margin-top: var(--navbar-height, 0px);
 }
 
 .home-container {
