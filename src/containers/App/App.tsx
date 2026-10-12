@@ -4,9 +4,10 @@ import { Route, Routes } from "react-router-dom";
 import { getPathMapping, stringToSlug } from "../../utils";
 import { useEffect } from "react";
 import { Navbar } from "../../components/Navbar";
-import { Header } from "../../components/Header";
+import Header from "../../components/Header";
 import { NotFound } from "../../components/NotFound";
 import { Footer } from "../../components/Footer";
+import MosquitoScroller from "../../components/mosquitoScroller";
 import MainHeader from "../../components/MainHeader";
 const App = () => {
   const pathMapping = getPathMapping();
@@ -27,6 +28,7 @@ const App = () => {
     <>
       {/* Navigation */}
       <Navbar />
+      <MosquitoScroller />
 
       {/* Header and PageContent */}
       <Routes>
@@ -40,8 +42,8 @@ const App = () => {
                   <>
                     {title == "Home" ? (
                       <MainHeader />
-                    ) : (
-                      <Header title={"Moskateer"} lead={"basic intro k"} />
+                    ) : ( 
+                      <Header heading={title|| "moskateer"} scrollTargetId="#2" />
                     )}
                     <div className="container">
                       <Component />
@@ -57,8 +59,7 @@ const App = () => {
           element={
             <>
               <Header
-                title="Not Found"
-                lead="The requested URL was not found on this server."
+                heading="Not Found"
               />
               <NotFound />
             </>
