@@ -1,3 +1,5 @@
+import Card from "../components/textcomponents/TextCard";
+
 export function Engineering() {
   return (
     <>
@@ -24,8 +26,17 @@ export function Engineering() {
 
       <div className="row mt-4">
         <div className="col">
-          <h2>Tips for Success</h2>
-          <hr />
+          <Card
+            text={[
+              {
+                title: "Engineering Success",
+                content:
+                  "Engineering success can be achieved by documenting your effort to follow the engineering design cycle: Design → Build → Test → Learn.",
+              },
+            ]}
+            borderColor="#0c649a"
+            title="Tips for Success"
+          />
           <p>
             Engineering success can be achieved by documenting your effort to
             follow the engineering design cycle: Design → Build → Test → Learn

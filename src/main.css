@@ -19,6 +19,7 @@ body {
 
   overflow-x: hidden;
   scroll-behavior: smooth;
+  background-color: var(--color-white);
 }
 
 #root {
