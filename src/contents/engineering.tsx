@@ -1,7 +1,32 @@
 import Card from "../components/textcomponents/TextCard";
+import Slider from "../components/textcomponents/Slider";
 
 export function Engineering() {
+  const slides = [
+    {
+      title: "The Global Challenge",
+      content:
+        "Explore the scale of the problem, its impact on communities, and the challenges that researchers face.",
+    },
+    {
+      title: "Our Approach",
+      content:
+        "We designed a system that combines synthetic biology tools with experimental validation.",
+    },
+    {
+      title: "Experimental Design",
+      content:
+        "Our constructs were designed, assembled, and tested through a sequence of controlled experiments.",
+    },
+    {
+      title: "Results and Analysis",
+      content:
+        "We analysed the results to understand the effectiveness of our approach and identify areas for improvement.",
+    },
+  ];
+
   return (
+    
     <>
       <div className="row mt-4">
         <div className="col">
@@ -37,6 +62,12 @@ export function Engineering() {
             borderColor="#0c649a"
             title="Tips for Success"
           />
+          <Slider
+            title="Our Research"
+            slides={slides}
+            image="/images/research.png"
+          />
+
           <p>
             Engineering success can be achieved by documenting your effort to
             follow the engineering design cycle: Design → Build → Test → Learn
